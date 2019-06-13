@@ -7,7 +7,7 @@
         "@bazel/buildifier": "latest",
         "@bazel/ibazel": "latest",
         "@bazel/typescript": "latest",
-        "typescript": "3.4.5"
+        "typescript": "3.5.2"
     },
     "scripts": {
         "build": "bazel build //...",
