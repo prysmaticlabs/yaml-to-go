@@ -1,4 +1,3 @@
-load("@io_bazel_rules_go//go:def.bzl", "go_library")
 load("@bazel_gazelle//:def.bzl", "gazelle")
 
 # gazelle:exclude node_modules
@@ -38,4 +37,3 @@ nodejs_binary(
     ],
     entry_point = "yaml_to_go/main",
 )
-
