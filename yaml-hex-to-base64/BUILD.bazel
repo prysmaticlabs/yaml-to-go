@@ -1,0 +1,29 @@
+load("@npm_bazel_typescript//:index.bzl", "ts_library")
+load("@build_bazel_rules_nodejs//:defs.bzl", "nodejs_binary")
+
+ts_library(
+    name = "lib",
+    srcs = ["hex-to-base64.ts"],
+    deps = [
+        "@npm//yaml",
+        "@npm//@types/yaml",
+        "@npm//@types/node",
+    ],
+)
+
+ts_library(
+    name = "main",
+    srcs = ["main.ts"],
+    deps = [
+        ":lib",
+        "@npm//@types/node",
+    ],
+)
+
+nodejs_binary(
+    name = "bin",
+    data = [
+        ":main",
+    ],
+    entry_point = "yaml_to_go/yaml-hex-to-base64/main",
+)
