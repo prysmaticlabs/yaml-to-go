@@ -1,5 +1,6 @@
 load("@bazel_gazelle//:def.bzl", "gazelle")
 
+# gazelle:exclude node_modules
 # gazelle:prefix github.com/prysmaticlabs/yaml-to-go
 gazelle(name = "gazelle")
 

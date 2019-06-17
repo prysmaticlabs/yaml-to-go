@@ -6,9 +6,10 @@ Caveats specifically for processing [Ethereum 2.0 yaml spec tests](https://githu
 
 - Hex strings are treated as bytes. You must handle hex encoded strings as
   binary data when serializing the yaml data.
-- If a hex encoded byte string is 32, 48, or 96 bytes, then it will be a fixed
-  size array. Otherwise the field is a byte slice.
-- All number values are treated as unsigned 64 bit integers.
+- If a hex encoded byte string is 32, 48, or 96 bytes, then ssz tag is added
+  to the struct. Example: `ssz:"size=32"` 
+- All number values are treated as unsigned 64 bit integers, unless it is a
+  decimal number then it would be float64.
 
 
 Note: This project is not unit tested or held to any high code standards. 
