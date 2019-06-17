@@ -21,7 +21,7 @@ ts_library(
 )
 
 nodejs_binary(
-    name = "bin",
+    name = "yaml-hex-to-base64",
     data = [
         ":main",
     ],
