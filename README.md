@@ -8,9 +8,9 @@ Caveats specifically for processing [Ethereum 2.0 yaml spec tests](https://githu
 
 - Hex strings are treated as bytes. You must handle hex encoded strings as
   binary data when serializing the yaml data.
-- When hex strings are considered for their type, if the length of the bytes
-  is less than or equal to 96 then it will be a fixed sized byte array. 
-  Otherwise, it is considered a byte slice `[]byte`.
+- If a hex encoded byte string is 32, 48, or 96 bytes, then it will be a fixed
+  size array. Otherwise the field is a byte slice.
+- All number values are treated as unsigned 64 bit integers.
 
 ## Credits
 
