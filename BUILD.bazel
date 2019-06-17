@@ -39,9 +39,3 @@ nodejs_binary(
     entry_point = "yaml_to_go/main",
 )
 
-go_library(
-    name = "go_default_library",
-    srcs = ["sszminimalone.yaml.go"],
-    importpath = "github.com/prysmaticlabs/yaml-to-go",
-    visibility = ["//visibility:public"],
-)

@@ -10,11 +10,13 @@ Caveats specifically for processing [Ethereum 2.0 yaml spec tests](https://githu
   to the struct. Example: `ssz:"size=32"` 
 - All number values are treated as unsigned 64 bit integers, unless it is a
   decimal number then it would be float64.
+- This library actually adds `json` tags to the structs because that seems to
+  be the only way it works with [github.com/ghodss/yaml](github.com/ghodss/yaml)
 
 
 Note: This project is not unit tested or held to any high code standards. 
 It exists purely due to the nuances in eth2 spec tests where existing code
-generation and yaml processing would not work. 
+generation and yaml processing would not work. In other words, it's bad! 
 
 ## Credits
 

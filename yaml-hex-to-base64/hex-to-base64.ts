@@ -6,7 +6,7 @@ export function yamlHexToBase64(input: string): string {
   
   parse(data);
 
-  return YAML.stringify(data);
+  return JSON.stringify(data, null, 2);
 }
 
 // Parse a piece of data, if the data has a string field and that string field
