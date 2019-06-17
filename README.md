@@ -1,7 +1,5 @@
 # Yaml to Go
 
-Work in progress!
-
 Create a go package from a given yaml file.
 
 Caveats specifically for processing [Ethereum 2.0 yaml spec tests](https://github.com/ethereum/eth2.0-spec-tests):
@@ -11,6 +9,11 @@ Caveats specifically for processing [Ethereum 2.0 yaml spec tests](https://githu
 - If a hex encoded byte string is 32, 48, or 96 bytes, then it will be a fixed
   size array. Otherwise the field is a byte slice.
 - All number values are treated as unsigned 64 bit integers.
+
+
+Note: This project is not unit tested or held to any high code standards. 
+It exists purely due to the nuances in eth2 spec tests where existing code
+generation and yaml processing would not work. 
 
 ## Credits
 
