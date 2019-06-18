@@ -1,24 +1,13 @@
-load("@io_bazel_rules_go//go:def.bzl", "go_library")
-load("@bazel_gazelle//:def.bzl", "gazelle")
-
-# gazelle:exclude node_modules
-# gazelle:prefix github.com/prysmaticlabs/yaml-to-go
-gazelle(name = "gazelle")
-
-exports_files(
-    ["tsconfig.json"],
-    visibility = ["//:__subpackages__"],
-)
-
 load("@npm_bazel_typescript//:index.bzl", "ts_library")
 load("@build_bazel_rules_nodejs//:defs.bzl", "nodejs_binary")
 
 ts_library(
     name = "lib",
-    srcs = ["yaml-to-go.ts"],
+    srcs = ["hex-to-base64.ts"],
     deps = [
         "@npm//yaml",
         "@npm//@types/yaml",
+        "@npm//@types/node",
     ],
 )
 
@@ -32,10 +21,9 @@ ts_library(
 )
 
 nodejs_binary(
-    name = "yaml-to-go-binary",
+    name = "yaml-hex-to-base64",
     data = [
         ":main",
     ],
-    entry_point = "yaml_to_go/main",
+    entry_point = "yaml_to_go/yaml-hex-to-base64/main",
 )
-
