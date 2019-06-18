@@ -1,12 +1,18 @@
 import YAML from 'yaml';
 import { Buffer as ImportedBuffer } from "buffer";
 
+const MAX_UINT64 = "18446744073709551615";
+const MAX_SAFE_INT_STR = "18446744073709552000";
+
 export function yamlHexToBase64(input: string): string {
   const data = YAML.parse(input);
   
   parse(data);
 
-  return YAML.stringify(data);
+  let ret = YAML.stringify(data);
+
+  // HACK: put back max uint64.
+  return ret.replace(new RegExp(MAX_SAFE_INT_STR, 'g'), MAX_UINT64);
 }
 
 // Parse a piece of data, if the data has a string field and that string field
