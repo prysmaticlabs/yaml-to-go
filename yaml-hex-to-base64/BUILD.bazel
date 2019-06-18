@@ -5,8 +5,6 @@ ts_library(
     name = "lib",
     srcs = ["hex-to-base64.ts"],
     deps = [
-        "@npm//yaml",
-        "@npm//@types/yaml",
         "@npm//@types/node",
     ],
 )
