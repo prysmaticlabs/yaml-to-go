@@ -37,5 +37,6 @@ nodejs_binary(
         ":main",
     ],
     entry_point = "yaml_to_go/main",
+    templated_args = ["--node_options=--max_old_space_size=8192"], # Set memory limit to 8gb
 )
 
