@@ -2,7 +2,12 @@ bazel-*
 node_modules
 dist
 
-
 # Test or generated files.
 *.yaml.go
 *.yaml
+
+# Archives
+*.tar*
+
+# ETH 2.0 project
+eth2.0-spec-tests
